@@ -1,0 +1,74 @@
+body {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    user-select: none;
+    background-color: #000;
+  }
+  
+  body[theme=dark] {
+    background: #fff;
+    color: #000;
+  }
+  
+  #hybrid {
+    visibility: hidden;
+  }
+  
+  #theme-toggle {
+    visibility: hidden;
+  }
+  
+  #theme-toggle + label {
+    content: '';
+    display: inline-block;
+    cursor: pointer;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #theme-toggle:not(:checked) + label {
+    background-color: orange;
+  }
+  
+  #theme-toggle:checked + label {
+    background-color: transparent;
+    box-shadow: inset -18px -16px 1px 1px #000;
+  }
+  
+  .intro-text {
+    top: 180px;
+    font-size: 1.6em;
+    font-family: monospace;
+  }
+  
+  [class*=text-] {
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: color 5s ease-in;
+  }
+  
+  body[theme=dark] {
+    .text-sun {
+      color: #222;
+    }
+    .text-moon {
+      color: #000;
+    }
+  }
+  
+  body[theme=light] {
+    .text-sun {
+      color: #fff;
+    }
+    .text-moon {
+      color: #ddd;
+    }
+  }
